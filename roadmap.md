@@ -73,139 +73,128 @@ Oracle-DBA-Learning-Roadmap/
 
 
 
-## 🗺️ Overall Plan: Oracle DBA Project Build
-### ⚙️ Phase 1:
-| Goal | Setup foundational tools and Git-based workflow |
-| Tasks |
+# 🗺️ Oracle DBA Project Build Plan
 
-Oracle 23c installed & running (Docker or native)
+## ⚙️ Phase 1: Environment Setup (Days 1–7)
+**Goal:** Setup foundational tools and Git-based workflow
 
-Listener verified
+| Task | Description |
+|------|-------------|
+| Oracle 23c installed & running | Native or Docker-based setup |
+| Listener verified | Confirm listener status and port |
+| SQL Developer + SQL\*Plus access | Ensure client access to DB |
+| Git project initialized | With README, `.gitignore`, `run.sh`, etc. |
+| Bash scripting basics verified | Confirm scripts execute and handle env setup |
+| Oracle users and tablespaces created | With setup SQL scripts |
+| Backup strategy basics | RMAN and Data Pump foundations |
 
-SQL Developer + SQL*Plus access
+➡️ **Output:** Verified local Oracle dev setup, working Git repo, and reusable environment automation.
 
-Git project initialized
+---
 
-Bash scripting basics verified
+## 💾 Phase 2: Backup, Recovery & Cloning (Days 8–14)
+**Goal:** Master RMAN, Data Pump, and backup automation
 
-Oracle users and tablespaces created
+| Task | Description |
+|------|-------------|
+| RMAN setup | Full and incremental backups |
+| Data Pump (`expdp`/`impdp`) | Logical export/import |
+| Flashback DB + logs | Practice time-based recovery |
+| Bash scripts | Automate backup/restore |
+| Clone DB | Use scripts for DB duplication |
 
-Backup strategy basics
+➡️ **Output:** Automated backup and restore process + recovery drills
 
-➡️ Output: Verified local Oracle dev setup, working Git repo, and environment automation.
+---
 
+## 🚀 Phase 3: Performance Monitoring & SQL Tuning (Days 15–21)
+**Goal:** Analyze and optimize database performance
 
-### 💾 Phase 2: Backup, Recovery & Cloning (Days 8–14)
+| Task | Description |
+|------|-------------|
+| AWR + ASH reports | Capture workload history |
+| EXPLAIN PLAN + DBMS_XPLAN | Analyze query execution paths |
+| Indexing and partitioning | Improve query performance |
+| Wait events, session monitoring | Identify bottlenecks |
+| Bash/Python tools | Automate performance insights |
 
-| Goal | Master RMAN, Data Pump, and backup automation |
-| Tasks |
+➡️ **Output:** Scripts to capture and analyze DB performance + demonstrated tuning skills
 
-RMAN setup, backup and restore
+---
 
-Data Pump expdp/impdp
+## 🤖 Phase 4: Automation & Job Scheduling (Days 22–28)
+**Goal:** Automate routine DBA tasks
 
-Flashback DB + logs
+| Task | Description |
+|------|-------------|
+| `DBMS_SCHEDULER` jobs | Scheduled task automation |
+| Bash/Python automation | Automate routine admin tasks |
+| Log monitoring & alerts | Trigger responses from logs |
+| OEM basics *(optional)* | Oracle Enterprise Manager usage |
+| Logging + email alerts | Custom alerting pipelines |
 
-Bash scripts for automated backups
+➡️ **Output:** A working automation layer for common DBA tasks
 
-Clone a DB using scripts
+---
 
-➡️ Output: Automated backup and restore process + recovery drills
+## 🔐 Phase 5: Security & Auditing (Days 29–35)
+**Goal:** Secure the DB and track activity
 
+| Task | Description |
+|------|-------------|
+| Oracle user policies | Password rules, lockout, expiry |
+| Password complexity & roles | Role-based access control |
+| Listener encryption | Secure listener with TCPS |
+| Auditing & TDE | Track changes and protect data |
+| Patching and compliance | Update and secure Oracle installations |
 
-### 🚀 Phase 3: Performance Monitoring & SQL Tuning (Days 15–21)
+➡️ **Output:** A secured Oracle DB with automated audit and encryption enabled
 
-| Goal | Analyze and optimize performance |
-| Tasks |
+---
 
-AWR + ASH reports
+## ☁️ Phase 6: Cloud, Terraform & OCI (Days 36–42)
+**Goal:** Provision infrastructure in Oracle Cloud (OCI)
 
-EXPLAIN PLAN + DBMS_XPLAN
+| Task | Description |
+|------|-------------|
+| Terraform basics | Write and run IaC scripts |
+| OCI CLI usage | Automate cloud operations |
+| Provision VCN, compute, DB | Full OCI environment |
+| Cloud backup strategy | RMAN to Object Storage |
+| Cloud metrics and monitoring | Track usage and performance |
 
-Indexing and partitioning
+➡️ **Output:** Infrastructure-as-Code (IaC) pipeline + OCI automation scripts
 
-Wait events, session monitoring
+---
 
-Bash/Python performance monitoring
+## 🧪 Phase 7: Capstone Projects (Days 43–45)
+**Goal:** Apply all skills in practical mini-projects
 
-➡️ Output: Scripts to capture and analyze DB performance + tuning skills
+| Project | Description |
+|---------|-------------|
+| Automated Backup Pipeline | Full backup + restore + logging |
+| Terraform-based OCI Infrastructure | End-to-end cloud provisioning |
+| Monitoring & Alerting Dashboard | Combine SQL, logs, scripts, and alerts |
 
+➡️ **Output:** Final Git-tracked project showcasing the full Oracle DBA toolchain
 
-### 🤖 Phase 4: Automation & Job Scheduling (Days 22–28)
+---
 
-| Goal | Automate routine DBA tasks |
-| Tasks |
+## 🧱 Daily Deliverables
 
-DBMS_SCHEDULER jobs
+For each day or task, the following files are expected:
 
-Bash/Python automation
+| File | Purpose |
+|------|---------|
+| `README.md` | Task description and why it matters |
+| `run.sh` | Automates the setup or action |
+| `verify.py` | Validates task success |
+| `sql/setup.sql` | SQL used for provisioning/config |
+| `output/` | Logs, screenshots, or outputs from the task |
 
-Log monitoring and alerts
+---
 
-OEM basics (optional)
+🧠 **Tip:** Structure your repo by `weekXX_taskname/`, with one subfolder per task and the above files inside each.
 
-Logging + email alerts
+Happy building! 💪
 
-➡️ Output: A working automation layer for DBA tasks
-
-
-### 🔐 Phase 5: Security & Auditing (Days 29–35)
-
-| Goal | Secure the DB and track activity |
-| Tasks |
-
-Oracle user policies
-
-Password complexity & roles
-
-Listener encryption
-
-Auditing and TDE
-
-Patching and compliance
-
-➡️ Output: A secured Oracle DB with automated audit logging
-
-
-### ☁️ Phase 6: Cloud, Terraform & OCI (Days 36–42)
-
-| Goal | Provision infrastructure in Oracle Cloud (OCI) |
-| Tasks |
-
-Terraform basics
-
-OCI CLI usage
-
-Provision VCN, compute, DB
-
-Cloud backup strategy
-
-Cloud metrics and monitoring
-
-➡️ Output: Infrastructure-as-Code (IaC) pipeline + OCI automation scripts
-
-
-🧪 Phase 7: Capstone Projects (Days 43–45)
-
-| Goal | Apply all skills in mini-projects |
-| Projects |
-
-Automated Backup Pipeline
-
-Terraform-based OCI Infrastructure
-
-Monitoring & Alerting Dashboard
-
-➡️ Output: Final Git-tracked project showcasing everything you’ve learned
-
-
-🧱 Daily Deliverables
-
-For every single day, you get:
-
-File	Description
-README.md	What to do, why it matters
-run.sh	Automates the task
-verify.py	Validates success
-sql/setup.sql	SQL for provisioning or config
-output/	Logs of what happened
