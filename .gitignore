@@ -1,0 +1,14 @@
+*.log
+*.trc
+*.trm
+*.dmp
+*.bak
+*.gz
+*.zip
+__pycache__/
+*.pyc
+.env
+.terraform/
+*.tfstate
+*.tfvars
+.DS_Store
