@@ -71,7 +71,7 @@ Oracle-DBA-Learning-Roadmap/
 ├── requirements.txt
 └── README.md  ← You are here
 
----
+```
 
 ## 🗺️ Oracle DBA Project Build Plan
 
