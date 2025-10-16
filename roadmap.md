@@ -71,11 +71,11 @@ Oracle-DBA-Learning-Roadmap/
 ├── requirements.txt
 └── README.md  ← You are here
 
+---
 
+## 🗺️ Oracle DBA Project Build Plan
 
-# 🗺️ Oracle DBA Project Build Plan
-
-## ⚙️ Phase 1: Environment Setup (Days 1–7)
+### ⚙️ Phase 1: Environment Setup (Days 1–7)
 **Goal:** Setup foundational tools and Git-based workflow
 
 | Task | Description |
@@ -92,7 +92,7 @@ Oracle-DBA-Learning-Roadmap/
 
 ---
 
-## 💾 Phase 2: Backup, Recovery & Cloning (Days 8–14)
+### 💾 Phase 2: Backup, Recovery & Cloning (Days 8–14)
 **Goal:** Master RMAN, Data Pump, and backup automation
 
 | Task | Description |
@@ -107,7 +107,7 @@ Oracle-DBA-Learning-Roadmap/
 
 ---
 
-## 🚀 Phase 3: Performance Monitoring & SQL Tuning (Days 15–21)
+### 🚀 Phase 3: Performance Monitoring & SQL Tuning (Days 15–21)
 **Goal:** Analyze and optimize database performance
 
 | Task | Description |
@@ -122,7 +122,7 @@ Oracle-DBA-Learning-Roadmap/
 
 ---
 
-## 🤖 Phase 4: Automation & Job Scheduling (Days 22–28)
+### 🤖 Phase 4: Automation & Job Scheduling (Days 22–28)
 **Goal:** Automate routine DBA tasks
 
 | Task | Description |
@@ -137,7 +137,7 @@ Oracle-DBA-Learning-Roadmap/
 
 ---
 
-## 🔐 Phase 5: Security & Auditing (Days 29–35)
+### 🔐 Phase 5: Security & Auditing (Days 29–35)
 **Goal:** Secure the DB and track activity
 
 | Task | Description |
@@ -152,7 +152,7 @@ Oracle-DBA-Learning-Roadmap/
 
 ---
 
-## ☁️ Phase 6: Cloud, Terraform & OCI (Days 36–42)
+### ☁️ Phase 6: Cloud, Terraform & OCI (Days 36–42)
 **Goal:** Provision infrastructure in Oracle Cloud (OCI)
 
 | Task | Description |
@@ -167,7 +167,7 @@ Oracle-DBA-Learning-Roadmap/
 
 ---
 
-## 🧪 Phase 7: Capstone Projects (Days 43–45)
+### 🧪 Phase 7: Capstone Projects (Days 43–45)
 **Goal:** Apply all skills in practical mini-projects
 
 | Project | Description |
