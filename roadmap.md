@@ -92,7 +92,6 @@ Oracle-DBA-Learning-Roadmap/
 
 ➡️ **Output:** Verified local Oracle dev setup, working Git repo, and reusable environment automation.
 
----
 
 ### 💾 Phase 2: Backup, Recovery & Cloning (Days 8–14)
 **Goal:** Master RMAN, Data Pump, and backup automation
@@ -107,7 +106,6 @@ Oracle-DBA-Learning-Roadmap/
 
 ➡️ **Output:** Automated backup and restore process + recovery drills
 
----
 
 ### 🚀 Phase 3: Performance Monitoring & SQL Tuning (Days 15–21)
 **Goal:** Analyze and optimize database performance
@@ -122,7 +120,6 @@ Oracle-DBA-Learning-Roadmap/
 
 ➡️ **Output:** Scripts to capture and analyze DB performance + demonstrated tuning skills
 
----
 
 ### 🤖 Phase 4: Automation & Job Scheduling (Days 22–28)
 **Goal:** Automate routine DBA tasks
@@ -137,7 +134,6 @@ Oracle-DBA-Learning-Roadmap/
 
 ➡️ **Output:** A working automation layer for common DBA tasks
 
----
 
 ### 🔐 Phase 5: Security & Auditing (Days 29–35)
 **Goal:** Secure the DB and track activity
@@ -152,7 +148,6 @@ Oracle-DBA-Learning-Roadmap/
 
 ➡️ **Output:** A secured Oracle DB with automated audit and encryption enabled
 
----
 
 ### ☁️ Phase 6: Cloud, Terraform & OCI (Days 36–42)
 **Goal:** Provision infrastructure in Oracle Cloud (OCI)
@@ -167,7 +162,6 @@ Oracle-DBA-Learning-Roadmap/
 
 ➡️ **Output:** Infrastructure-as-Code (IaC) pipeline + OCI automation scripts
 
----
 
 ### 🧪 Phase 7: Capstone Projects (Days 43–45)
 **Goal:** Apply all skills in practical mini-projects
