@@ -11,4 +11,3 @@ Each day includes:
 - `sql/`: Supporting SQL scripts
 - `output/`: Logs or outputs
 
-
