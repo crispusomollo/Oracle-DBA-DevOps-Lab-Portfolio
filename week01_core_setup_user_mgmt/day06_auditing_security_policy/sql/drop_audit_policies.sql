@@ -1,0 +1,19 @@
+-- Drop audit policies for cleanup
+ALTER SESSION SET CONTAINER = FREEPDB1;
+
+BEGIN
+    EXECUTE IMMEDIATE 'DROP AUDIT POLICY app_login_audit';
+EXCEPTION WHEN OTHERS THEN
+    IF SQLCODE != -46241 THEN RAISE; END IF;
+END;
+/
+
+BEGIN
+    EXECUTE IMMEDIATE 'DROP AUDIT POLICY app_obj_access_audit';
+EXCEPTION WHEN OTHERS THEN
+    IF SQLCODE != -46241 THEN RAISE; END IF;
+END;
+/
+
+PROMPT Audit policies dropped successfully.
+
