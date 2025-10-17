@@ -1,0 +1,6 @@
+DIRECTORY=DATA_PUMP_DIR
+DUMPFILE=backup_%U.dmp
+LOGFILE=impdp_$(date +%Y%m%d).log
+REMAP_SCHEMA=HR:HR_TEST
+PARALLEL=2
+
