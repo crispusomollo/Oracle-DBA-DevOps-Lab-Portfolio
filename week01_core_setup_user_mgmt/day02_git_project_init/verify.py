@@ -1,6 +1,14 @@
-# TODO: Add Python logic to verify task success
-def main():
-    print("[*] Verification not yet implemented.")
+#!/bin/bash
+LOG="./output/repo_check_log.txt"
+echo "=== Repo Verification Log: $(date) ===" > $LOG
 
-if __name__ == "__main__":
-    main()
+echo "[*] Checking Git status..." | tee -a $LOG
+git status >> $LOG
+
+echo "[*] Checking folder structure..." | tee -a $LOG
+find . -type d | tee -a $LOG
+
+echo "[*] Checking for missing README.md files..." | tee -a $LOG
+find . -type f -name "README.md" | tee -a $LOG
+
+echo "[+] Repo verification complete. Log saved to $LOG"
