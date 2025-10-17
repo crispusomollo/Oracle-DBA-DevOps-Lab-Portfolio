@@ -1,21 +1,15 @@
 #!/bin/bash
-echo "[*] Configuring Oracle environment..."
+echo "[*] Starting Oracle 23c environment verification from Ubuntu..."
 
-# Example environment variables (adjust as needed)
-export ORACLE_HOME=/opt/oracle/product/23ai/dbhomeFree
-export ORACLE_SID=FREEPDB1
-export PATH=$ORACLE_HOME/bin:$PATH
+sqlplus -s chrisorigi/Myles003@//localhost:1539/FREEPDB1 as sysdba <<EOF | tee ./output/db_status.txt
+SET HEADING OFF
+SELECT 'Instance: ' || instance_name || ', Status: ' || status FROM v\$instance;
+EXIT;
+EOF
 
-echo "[✓] Environment variables set."
-
-echo "[*] Checking listener status (not available on client)..."
-command -v lsnrctl >/dev/null && lsnrctl status || echo "[i] lsnrctl not installed (expected on client machine)"
-
-#echo "[*] Checking listener status..."
-#lsnrctl status
-
-echo "[*] Displaying SQL*Plus version..."
-sqlplus -v
-
-echo "[*] Done."
+if grep -q "OPEN" ./output/db_status.txt; then
+  echo "[✓] Oracle 23c is reachable and instance is OPEN."
+else
+  echo "[✗] Unable to connect to Oracle or instance not open."
+fi
 
