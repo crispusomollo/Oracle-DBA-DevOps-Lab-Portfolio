@@ -1,0 +1,25 @@
+ALTER SESSION SET CONTAINER = FREEPDB1;
+
+-- Drop users and tablespace if re-running the script
+BEGIN
+    EXECUTE IMMEDIATE 'DROP USER app_user CASCADE';
+EXCEPTION WHEN OTHERS THEN
+    IF SQLCODE != -01918 THEN
+        RAISE;
+    END IF;
+END;
+/
+
+BEGIN
+    EXECUTE IMMEDIATE 'DROP USER app_dev CASCADE';
+EXCEPTION WHEN OTHERS THEN
+    IF SQLCODE != -01918 THEN
+        RAISE;
+    END IF;
+END;
+/
+
+DROP TABLESPACE app_data INCLUDING CONTENTS AND DATAFILES;
+
+PROMPT Users and tablespace dropped successfully.
+
