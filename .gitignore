@@ -1,14 +1,21 @@
-*.log
-*.trc
-*.trm
-*.dmp
-*.bak
-*.gz
-*.zip
-__pycache__/
-*.pyc
+# Ignore environment and secret files
 .env
-.terraform/
-*.tfstate
-*.tfvars
+*.log
+*.rdb
+__pycache__/
+output/
+*.pyc
+*.swp
+*.sqlite
+*.bak
 .DS_Store
+*.zip
+*.tar.gz
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# Python virtual environments
+venv/
+.env/
+
