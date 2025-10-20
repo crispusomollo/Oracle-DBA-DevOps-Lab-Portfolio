@@ -7,7 +7,7 @@
 
 echo "[*] Running automation for Day 7..."
 
-DB_CONN="sys/YourSysPassword@//localhost:1521/FREEPDB1 as sysdba"
+DB_CONN="chrisorigi/Myles003@//localhost:1539/FREEPDB1 as sysdba"
 LOG="./output/simulated_backup.log"
 BACKUP_PATH="/opt/oracle/backups"
 MANIFEST="./output/backup_manifest.json"

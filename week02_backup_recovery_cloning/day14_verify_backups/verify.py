@@ -3,7 +3,7 @@
 # Backup Verification Automation
 # ============================================================
 
-DB_CONN="sys/YourSysPassword@//localhost:1521/FREE as sysdba"
+DB_CONN="chrisorigi/Myles003@//localhost:1539/FREE as sysdba"
 LOG_DATE=$(date +%Y%m%d)
 REPORT="./output/backup_status_report_${LOG_DATE}.log"
 

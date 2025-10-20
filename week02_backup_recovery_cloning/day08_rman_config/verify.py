@@ -17,5 +17,5 @@ for key, val in checks.items():
         print(f"[✗] {key} missing or invalid")
 
 print("\nRun RMAN command test:")
-print("rman target / catalog rman/Rman#2025@FREEPDB1")
+print("rman target / catalog rman/Rman2025@FREEPDB1")
 

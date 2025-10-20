@@ -15,7 +15,7 @@ def verify_tablespaces():
         cur.execute("""
             SELECT tablespace_name, file_name, bytes/1024/1024 AS size_mb, autoextensible
             FROM dba_data_files
-            WHERE tablespace_name IN ('APP_DATA', 'APP_INDEX')
+            WHERE tablespace_name IN ('ORA_DATA', 'ORA_INDEX')
         """)
         for row in cur.fetchall():
             print(f"[✓] {row[0]} | File: {row[1]} | Size: {row[2]:.1f}MB | Autoextend: {row[3]}")
@@ -24,7 +24,7 @@ def verify_tablespaces():
         cur.execute("""
             SELECT username, tablespace_name, bytes/1024/1024 AS quota_mb
             FROM dba_ts_quotas
-            WHERE username IN ('APP_USER', 'APP_DEV')
+            WHERE username IN ('ORA_USER', 'ORA_DEV')
         """)
         print("\n=== User Quotas ===")
         for row in cur.fetchall():

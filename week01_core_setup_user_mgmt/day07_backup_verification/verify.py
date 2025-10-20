@@ -3,11 +3,11 @@ import cx_Oracle
 import json
 import os
 
-dsn = cx_Oracle.makedsn("localhost", 1521, service_name="FREEPDB1")
+dsn = cx_Oracle.makedsn("localhost", 1539, service_name="FREEPDB1")
 
 def verify_backup():
     try:
-        conn = cx_Oracle.connect("sys", "YourSysPassword", dsn, mode=cx_Oracle.SYSDBA)
+        conn = cx_Oracle.connect("chrisorigi", "Myles003", dsn, mode=cx_Oracle.SYSDBA)
         cur = conn.cursor()
 
         print("=== Backup Registry Status ===")

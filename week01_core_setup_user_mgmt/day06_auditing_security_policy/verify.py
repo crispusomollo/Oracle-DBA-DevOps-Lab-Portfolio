@@ -6,28 +6,28 @@ dsn = cx_Oracle.makedsn("localhost", 1539, service_name="FREEPDB1")
 
 def verify_audit():
     try:
-        conn = cx_Oracle.connect("sys", "YourSysPassword", dsn, mode=cx_Oracle.SYSDBA)
+        conn = cx_Oracle.connect("chrisorigi", "Myles003", dsn, mode=cx_Oracle.SYSDBA)
         cur = conn.cursor()
 
         print("=== Active Audit Policies ===")
         cur.execute("""
-            SELECT policy_name, enabled_option, user_name 
+            SELECT policy_name, enabled_option, entity_name 
             FROM audit_unified_enabled_policies
-            WHERE policy_name LIKE 'APP_%'
+            WHERE policy_name LIKE 'ORA_%'
         """)
         for row in cur.fetchall():
             print(f"[✓] {row[0]} | Mode: {row[1]} | User: {row[2]}")
 
         print("\n=== Recent Audit Trail Entries ===")
         cur.execute("""
-            SELECT username, action_name, object_name, event_timestamp
+            SELECT dbusername, userhost, action_name, object_name, event_timestamp
             FROM unified_audit_trail
             WHERE event_timestamp > SYSDATE - 1
-              AND username IN ('APP_USER', 'APP_DEV')
-            ORDER BY event_timestamp DESC FETCH FIRST 5 ROWS ONLY
+              AND dbusername IN ('CHRISORIGI', 'SYS')
+            ORDER BY event_timestamp DESC FETCH FIRST 10 ROWS ONLY
         """)
         for row in cur.fetchall():
-            print(f"[→] {row[0]} | {row[1]} | {row[2]} | {row[3]}")
+            print(f"[→] {row[0]} | {row[1]} | {row[2]} | {row[3]} | {row[4]}")
 
         cur.close()
         conn.close()

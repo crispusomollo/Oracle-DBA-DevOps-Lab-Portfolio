@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 import cx_Oracle
 
-dsn = cx_Oracle.makedsn("localhost", 1521, service_name="FREEPDB1")
+dsn = cx_Oracle.makedsn("localhost", 1539, service_name="FREEPDB1")
 
 def verify_import():
     print("=== Data Pump Import Verification ===")
     try:
-        conn = cx_Oracle.connect("hr_restore", "hr", dsn)
+        conn = cx_Oracle.connect("chrisorigi", "Myles003", dsn)
         cur = conn.cursor()
         cur.execute("SELECT COUNT(*) FROM employees")
         count = cur.fetchone()[0]

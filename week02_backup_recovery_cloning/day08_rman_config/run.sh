@@ -3,7 +3,7 @@
 # Day 8 - RMAN Configuration & Environment Setup
 # ============================================================
 
-DB_CONN="sys/YourSysPassword@//localhost:1521/FREEPDB1 as sysdba"
+DB_CONN="chrisorigi/Myles003@//localhost:1539/FREEPDB1 as sysdba"
 LOG="./output/env_check.log"
 JSON="./output/rman_env_status.json"
 
@@ -33,10 +33,10 @@ fi
 
 # Step 3: Create RMAN catalog user
 echo "[*] Creating RMAN catalog user..." | tee -a $LOG
-sqlplus -s "$DB_CONN" @"sql/create_rman_catalog_user.sql" >> $LOG
+sqlplus "$DB_CONN" @"sql/create_rman_catalog_user.sql" >> $LOG
 
 # Step 4: Run environment checks with Python
-python3 validate_env.py | tee -a $LOG
+python3 verify.py | tee -a $LOG
 
 # Step 5: Save environment status as JSON
 cat <<EOF > $JSON

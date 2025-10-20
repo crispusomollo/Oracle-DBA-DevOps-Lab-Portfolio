@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 import cx_Oracle
 
-dsn = cx_Oracle.makedsn("localhost", 1521, service_name="FREEPDB1_CLONE")
+'''dsn = cx_Oracle.makedsn("localhost", 1539, service_name="FREEPDB1_CLONE")
+'''
+dsn = cx_Oracle.makedsn("localhost", 1539, service_name="FREEPDB1_CLONE")
 
 def verify_clone():
     print("=== PDB Clone Verification ===")
     try:
-        conn = cx_Oracle.connect("hr", "hr", dsn)
+        conn = cx_Oracle.connect("chrisorigi", "Myles003", dsn)
         cur = conn.cursor()
         cur.execute("SELECT COUNT(*) FROM employees")
         count = cur.fetchone()[0]

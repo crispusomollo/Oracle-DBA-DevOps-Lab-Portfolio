@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 import cx_Oracle, json, os
 
-dsn = cx_Oracle.makedsn("localhost", 1521, service_name="FREEPDB1")
+dsn = cx_Oracle.makedsn("localhost", 1539, service_name="FREEPDB1")
 
 def check_backups():
-    conn = cx_Oracle.connect("sys", "YourSysPassword", dsn, mode=cx_Oracle.SYSDBA)
+    conn = cx_Oracle.connect("chrisorigi", "Myles003", dsn, mode=cx_Oracle.SYSDBA)
     cur = conn.cursor()
     print("=== Recent RMAN Backups ===")
     cur.execute("""
