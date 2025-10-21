@@ -3,7 +3,7 @@
 # Unified Backup Workflow: RMAN + Data Pump + Flashback
 # ============================================================
 
-DB_CONN="sys/YourSysPassword@//localhost:1521/FREE as sysdba"
+DB_CONN="sys/Myles003@//localhost:1539/FREEPDB1 as sysdba"
 LOG_DATE=$(date +%Y%m%d)
 RMAN_LOG="./output/rman_log_${LOG_DATE}.log"
 DATAPUMP_LOG="./output/datapump_log_${LOG_DATE}.log"
@@ -12,7 +12,7 @@ FLASHBACK_LOG="./output/flashback_check.log"
 echo "=== [$(date)] Starting Integrated Backup Pipeline ===" | tee $RMAN_LOG
 
 # 1. Verify Flashback
-sqlplus -s "$DB_CONN" <<EOF | tee -a $FLASHBACK_LOG
+sqlplus "$DB_CONN" <<EOF | tee -a $FLASHBACK_LOG
 @sql/check_flashback.sql
 EOF
 
@@ -32,7 +32,7 @@ fi
 
 # 3. Run Data Pump Export
 echo "[*] Starting Data Pump Export..." | tee -a $DATAPUMP_LOG
-expdp system/YourSysPassword parfile=sql/datapump_expdp.par | tee -a $DATAPUMP_LOG
+expdp sys/Myles003@//localhost:1539/freepdb1 parfile=sql/datapump_expdp.par | tee -a $DATAPUMP_LOG
 
 if grep -q "Job .* successfully completed" "$DATAPUMP_LOG"; then
   echo "[✓] Data Pump Export completed successfully." | tee -a $DATAPUMP_LOG

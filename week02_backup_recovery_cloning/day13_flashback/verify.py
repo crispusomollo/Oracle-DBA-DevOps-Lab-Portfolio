@@ -14,7 +14,7 @@ def check_datapump_log(log_file):
 
 def verify_flashback():
     try:
-        conn = cx_Oracle.connect("sys/YourSysPassword@//localhost:1521/FREE", mode=cx_Oracle.SYSDBA)
+        conn = cx_Oracle.connect("sys/Myles003@//localhost:1539/FREEPDB1", mode=cx_Oracle.SYSDBA)
         cur = conn.cursor()
         cur.execute("SELECT FLASHBACK_ON FROM V$DATABASE")
         status = cur.fetchone()[0]
