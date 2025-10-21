@@ -1,0 +1,33 @@
+---
+- name: Ensure backup directories exist
+  file:
+    path: "{{ item }}"
+    state: directory
+  loop:
+    - /home/{{ ansible_user }}/OracleBackups
+    - /home/{{ ansible_user }}/OracleBackups/logs
+
+- name: Copy backup scripts
+  copy:
+    src: "{{ item }}"
+    dest: "/home/{{ ansible_user }}/OracleBackups/{{ item | basename }}"
+    mode: '0755'
+  with_fileglob:
+    - "files/*"
+
+- name: Execute backup script
+  shell: "/home/{{ ansible_user }}/OracleBackups/run.sh"
+  register: backup_result
+  ignore_errors: yes
+
+- name: Display output
+  debug:
+    var: backup_result.stdout_lines
+
+- name: Send email notification
+  shell: >
+    python3 /home/{{ ansible_user }}/OracleBackups/notify_email.py
+    "{{ '✅ Oracle Backup Success' if backup_result.rc == 0 else '❌ Oracle Backup Failure' }}"
+    "{{ backup_result.stdout }}"
+  ignore_errors: yes
+

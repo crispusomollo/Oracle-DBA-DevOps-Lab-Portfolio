@@ -1,0 +1,5 @@
+# Run every day at 7:00 AM
+0 7 * * * /path/to/run.sh >> /path/to/output/monitor_log.txt 2>&1
+
+
+crontab cron/monitoring.cron

@@ -1,0 +1,7 @@
+---
+- name: Oracle Backup Automation via Ansible
+  hosts: oracle_servers
+  become: yes
+  roles:
+    - oracle_backup
+
