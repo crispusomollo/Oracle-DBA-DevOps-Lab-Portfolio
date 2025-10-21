@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 import time, cx_Oracle, pandas as pd
 
-dsn = cx_Oracle.makedsn("localhost", 1521, service_name="FREE")
-conn = cx_Oracle.connect("sys", "YourSysPassword", dsn, mode=cx_Oracle.SYSDBA)
+dsn = cx_Oracle.makedsn("localhost", 1539, service_name="FREEPDB1")
+conn = cx_Oracle.connect("sys", "Myles003", dsn, mode=cx_Oracle.SYSDBA)
 cur = conn.cursor()
 
 queries = [

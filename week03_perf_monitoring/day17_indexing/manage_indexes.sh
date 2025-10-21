@@ -3,7 +3,7 @@
 # Automate Oracle index creation, analysis, and maintenance
 # ============================================================
 
-DB_CONN="sys/YourSysPassword@//localhost:1521/FREE as sysdba"
+DB_CONN="sys/Myles003@//localhost:1539/FREEPDB1 as sysdba"
 OUT_DIR="./output"
 mkdir -p $OUT_DIR
 

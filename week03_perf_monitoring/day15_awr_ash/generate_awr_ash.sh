@@ -3,7 +3,7 @@
 # Automate AWR & ASH Performance Report Generation
 # ============================================================
 
-DB_CONN="sys/YourSysPassword@//localhost:1521/FREE as sysdba"
+DB_CONN="sys/Myles003@//localhost:1539/FREEPDB1 as sysdba"
 LOG_DATE=$(date +%Y%m%d_%H%M)
 OUT_DIR="./output"
 

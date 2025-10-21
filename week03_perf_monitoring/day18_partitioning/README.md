@@ -48,9 +48,3 @@
 
 ---
 
-## ✅ Git Commit
-
-```bash
-git add .
-git commit -m "[W03][D18] Implemented Oracle table partitioning and automated performance testing"
-
