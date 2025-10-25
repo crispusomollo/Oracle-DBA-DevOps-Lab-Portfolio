@@ -12,6 +12,6 @@ echo "LOGGING_LISTENER=ON" >> $LISTENER_FILE
 echo "TRACE_LEVEL_LISTENER=USER" >> $LISTENER_FILE
 echo "SSL_CLIENT_AUTHENTICATION=TRUE" >> $LISTENER_FILE
 
-#lsnrctl reload
+lsnrctl reload
 echo "Listener hardened and reloaded."
 
