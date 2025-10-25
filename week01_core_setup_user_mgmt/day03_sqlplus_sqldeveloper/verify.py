@@ -9,7 +9,7 @@ def verify_users():
         conn = cx_Oracle.connect("chrisorigi", "Myles003", dsn, mode=cx_Oracle.SYSDBA)
         cur = conn.cursor()
 
-        cur.execute("SELECT username, account_status FROM dba_users WHERE username IN ('ORA_USER', 'ORA_DEV')")
+        cur.execute("SELECT username, account_status FROM dba_users WHERE username IN ('TEST_USER', 'ADMIN_USER')")
         rows = cur.fetchall()
 
         print("=== User Verification Results ===")

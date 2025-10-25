@@ -12,7 +12,7 @@ def check_privileges():
         print("=== Role Verification ===")
         cur.execute("""
             SELECT role, authentication_type FROM dba_roles 
-            WHERE role IN ('ORA_READONLY', 'ORA_DEVOPS')
+            WHERE role IN ('DBA_ASSISTANT', 'ORA_DEVOPS')
         """)
         for row in cur.fetchall():
             print(f"[✓] Role: {row[0]} | Auth: {row[1]}")
@@ -21,7 +21,7 @@ def check_privileges():
         cur.execute("""
             SELECT grantee, privilege 
             FROM dba_sys_privs 
-            WHERE grantee IN ('ORA_READONLY', 'ORA_DEVOPS')
+            WHERE grantee IN ('DBA_ASSISTANT', 'ORA_DEVOPS')
             ORDER BY grantee
         """)
         for row in cur.fetchall():
@@ -31,7 +31,7 @@ def check_privileges():
         cur.execute("""
             SELECT grantee, granted_role 
             FROM dba_role_privs
-            WHERE granted_role IN ('ORA_READONLY', 'ORA_DEVOPS')
+            WHERE granted_role IN ('DBA_ASSISTANT', 'ORA_DEVOPS')
         """)
         for row in cur.fetchall():
             print(f"[✓] User: {row[0]} | Role: {row[1]}")
