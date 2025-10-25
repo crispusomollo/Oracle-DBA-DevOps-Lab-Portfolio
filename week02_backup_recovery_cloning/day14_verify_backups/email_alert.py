@@ -21,3 +21,4 @@ def send_email(report_file):
 if __name__ == "__main__":
     send_email("./output/backup_status_report_$(date +%Y%m%d).log")
 
+

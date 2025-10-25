@@ -41,3 +41,4 @@ Automate log parsing, verification, and reporting for Oracle backups (RMAN, Data
 
 python3 email_alert.py >> $REPORT 2>&1
 
+
