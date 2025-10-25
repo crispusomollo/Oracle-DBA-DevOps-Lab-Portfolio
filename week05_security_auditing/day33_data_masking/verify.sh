@@ -1,0 +1,6 @@
+#!/bin/bash
+# verify_masking.sh
+sqlplus -s hr/password@XEPDB1 <<EOF
+SELECT POLICY_NAME, COLUMN_NAME FROM DBA_REDACTION_POLICIES WHERE OBJECT_NAME='EMP_SENSITIVE';
+EOF
+
