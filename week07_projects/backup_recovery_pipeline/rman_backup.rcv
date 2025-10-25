@@ -1,0 +1,9 @@
+run {
+  CONFIGURE RETENTION POLICY TO REDUNDANCY 2;
+  CONFIGURE CONTROLFILE AUTOBACKUP ON;
+  CONFIGURE CHANNEL DEVICE TYPE DISK FORMAT '/opt/oracle/backups/%d_%U.bkp';
+  allocate channel c1 device type disk;
+  backup as compressed backupset DATABASE PLUS ARCHIVELOG;
+  release channel c1;
+}
+
