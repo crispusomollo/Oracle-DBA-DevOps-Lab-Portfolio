@@ -17,4 +17,3 @@ with smtplib.SMTP("smtp.gmail.com", 587) as server:
     server.send_message(msg)
 
 print(f"[*] Notification sent: {subject}")
-
