@@ -111,7 +111,6 @@ If you plan to contribute or use the code in your projects, please review the LI
 
 ## 🙌 Contributing / Feedback
 Contributions welcome!
-Fork, star, suggest improvements, or open issues
 
----
+Fork, star, suggest improvements, or open issues
 
